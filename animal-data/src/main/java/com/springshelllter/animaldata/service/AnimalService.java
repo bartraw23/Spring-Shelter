@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -25,6 +26,11 @@ public class AnimalService {
     @Transactional
     public Optional<Animal> findById(UUID id) {
         return animalRepository.findById(id);
+    }
+
+    @Transactional
+    public List<Animal> findByName(String name) {
+        return animalRepository.findByName(name);
     }
 
     @Transactional
