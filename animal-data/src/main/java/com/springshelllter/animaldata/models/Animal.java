@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity
@@ -29,4 +30,10 @@ public class Animal {
 
     @Column
     private String race;
+
+    @Column
+    private LocalDateTime dateOfBirth;
+
+    @Column
+    private LocalDateTime dateOfEnrollment;
 }
