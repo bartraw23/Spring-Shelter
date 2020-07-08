@@ -32,6 +32,9 @@ public class Animal {
     private String race;
 
     @Column
+    private Double weight;
+
+    @Column
     private LocalDateTime dateOfBirth;
 
     @Column
@@ -83,5 +86,13 @@ public class Animal {
 
     public void setDateOfEnrollment(LocalDateTime dateOfEnrollment) {
         this.dateOfEnrollment = dateOfEnrollment;
+    }
+
+    public Double getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Double weight) {
+        this.weight = weight;
     }
 }
