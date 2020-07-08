@@ -3,12 +3,10 @@ package com.springshelllter.animaldata.controller;
 import com.springshelllter.animaldata.models.Animal;
 import com.springshelllter.animaldata.service.AnimalService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/animals")
@@ -24,5 +22,15 @@ public class AnimalController {
     @PostMapping
     public Animal addHero(@RequestBody @Valid Animal animal) {
         return animalService.addAnimal(animal);
+    }
+
+    @DeleteMapping("/{id}")
+    public boolean deleteAnimal(@PathVariable("id") UUID id) {
+        return animalService.delete(id);
+    }
+
+    @GetMapping("/{id}")
+    public Animal getAnimal(@PathVariable("id") UUID id) {
+        return animalService.findById(id).get();
     }
 }
