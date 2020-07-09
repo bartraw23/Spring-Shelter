@@ -34,6 +34,11 @@ public class AnimalService {
     }
 
     @Transactional
+    public List<Animal> findAll() {
+        return animalRepository.findAll();
+    }
+
+    @Transactional
     public boolean delete(UUID id) {
         if (findById(id).isPresent()) {
             animalRepository.delete(findById(id).get());

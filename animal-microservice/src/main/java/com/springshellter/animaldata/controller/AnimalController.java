@@ -41,4 +41,9 @@ public class AnimalController {
         return animalService.findByName(name);
     }
 
+    @GetMapping
+    public List<Animal> getAllAnimals(){
+        return animalService.findAll();
+    }
+
 }
