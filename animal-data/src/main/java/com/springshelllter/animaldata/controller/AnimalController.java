@@ -21,9 +21,10 @@ public class AnimalController {
     }
 
     @PostMapping
-    public Animal addHero(@RequestBody @Valid Animal animal) {
+    public Animal addAnimal(@RequestBody @Valid Animal animal) {
         return animalService.addAnimal(animal);
     }
+
 
     @DeleteMapping("/{id}")
     public boolean deleteAnimal(@PathVariable("id") UUID id) {
