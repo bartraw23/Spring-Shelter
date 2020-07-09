@@ -1,7 +1,7 @@
-package com.springshelllter.animaldata.controller;
+package com.springshellter.animaldata.controller;
 
-import com.springshelllter.animaldata.models.Animal;
-import com.springshelllter.animaldata.service.AnimalService;
+import com.springshellter.animaldata.models.Animal;
+import com.springshellter.animaldata.service.AnimalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
