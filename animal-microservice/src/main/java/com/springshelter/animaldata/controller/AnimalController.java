@@ -1,7 +1,7 @@
-package com.springshellter.animaldata.controller;
+package com.springshelter.animaldata.controller;
 
-import com.springshellter.animaldata.models.Animal;
-import com.springshellter.animaldata.service.AnimalService;
+import com.springshelter.animaldata.models.Animal;
+import com.springshelter.animaldata.service.AnimalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +25,6 @@ public class AnimalController {
         return animalService.addAnimal(animal);
     }
 
-
     @DeleteMapping("/{id}")
     public boolean deleteAnimal(@PathVariable("id") UUID id) {
         return animalService.delete(id);
@@ -42,8 +41,7 @@ public class AnimalController {
     }
 
     @GetMapping
-    public List<Animal> getAllAnimals(){
+    public List<Animal> getAllAnimals() {
         return animalService.findAll();
     }
-
 }

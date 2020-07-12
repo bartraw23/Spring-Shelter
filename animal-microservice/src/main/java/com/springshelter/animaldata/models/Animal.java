@@ -1,4 +1,4 @@
-package com.springshellter.animaldata.models;
+package com.springshelter.animaldata.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Type;

@@ -1,4 +1,4 @@
-package com.springshellter.animaldata;
+package com.springshelter.animaldata;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

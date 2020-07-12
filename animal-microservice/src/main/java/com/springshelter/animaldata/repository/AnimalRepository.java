@@ -1,6 +1,6 @@
-package com.springshellter.animaldata.repository;
+package com.springshelter.animaldata.repository;
 
-import com.springshellter.animaldata.models.Animal;
+import com.springshelter.animaldata.models.Animal;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 

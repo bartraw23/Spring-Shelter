@@ -1,7 +1,7 @@
-package com.springshellter.animaldata.service;
+package com.springshelter.animaldata.service;
 
-import com.springshellter.animaldata.models.Animal;
-import com.springshellter.animaldata.repository.AnimalRepository;
+import com.springshelter.animaldata.models.Animal;
+import com.springshelter.animaldata.repository.AnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

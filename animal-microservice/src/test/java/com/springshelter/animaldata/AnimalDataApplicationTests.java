@@ -1,10 +1,10 @@
-package com.springshellter.viewmicroservice;
+package com.springshelter.animaldata;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ViewMicroserviceApplicationTests {
+class AnimalDataApplicationTests {
 
 	@Test
 	void contextLoads() {
