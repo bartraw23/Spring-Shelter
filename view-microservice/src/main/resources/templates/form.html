@@ -1,16 +1,17 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
-    <title></title>
+<head th:replace="fragments :: head">
 </head>
 <body>
- <form method="post" action="http://localhost:8100/animals">
-     <input type="text" value="name">
-     <input type="text" value="race">
-     <input type="text" value="species">
-     <input type="number" value="weight">
-     <input type="datetime-local" value="dateOfBirth">
-     <input type="submit" value="add">
- </form>
+<div class="container">
+    <form method="post" action="http://localhost:8100/animals">
+        <input type="text" value="name">
+        <input type="text" value="race">
+        <input type="text" value="species">
+        <!--  <input type="number" value="weight">
+          <input type="datetime-local" value="dateOfBirth">-->
+        <input type="submit" value="add">
+    </form>
+</div>
+<footer th:replace="fragments :: footer"></footer>
 </body>
 </html>
