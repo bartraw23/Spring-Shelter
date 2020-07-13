@@ -3,14 +3,19 @@
 </head>
 <body>
 <div class="container">
-    <form method="post" action="http://localhost:8100/animals">
-        <input type="text" value="name">
-        <input type="text" value="race">
-        <input type="text" value="species">
+    <form id="form"><!-- method="POST" action="http://localhost:8100/animals" -->
+        <input type="text" value="name" name="name">
+        <input type="text" value="race" name="race">
+        <input type="text" value="species" name="species">
+        <input type="submit" />
         <!--  <input type="number" value="weight">
-          <input type="datetime-local" value="dateOfBirth">-->
-        <input type="submit" value="add">
+          <input type="datetime-local" value="dateOfBirth">
+           <button class="btn btn-success" onclick="sendForm('addAnimalForm','http://localhost:8100/animals')">
+        Add
+    </button>
+    -->
     </form>
+
 </div>
 <footer th:replace="fragments :: footer"></footer>
 </body>
