@@ -9,7 +9,7 @@ $("form").submit(function () {
         data: JSON.stringify(data),
         success: function (result) {
             console.log(result);
-            window.alert('Succes in adding: ' + result.name + ' to shelter. :D');
+            window.alert('Succes in adding: ' + result.name + ' to shelter :D');
         },
         error: function (error) {
             console.log(error);
