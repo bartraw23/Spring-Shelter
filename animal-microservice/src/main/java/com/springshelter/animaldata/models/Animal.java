@@ -33,6 +33,9 @@ public class Animal {
     private String race;
 
     @Column
+    private Gender gender;
+
+    @Column
     private Double weight;
 
     @Column
@@ -95,5 +98,13 @@ public class Animal {
 
     public void setWeight(Double weight) {
         this.weight = weight;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 }
