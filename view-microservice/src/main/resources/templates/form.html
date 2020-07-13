@@ -3,23 +3,35 @@
 </head>
 <body>
 <div class="container">
-    <form id="form"><!-- method="POST" action="http://localhost:8100/animals" -->
-        <input type="text" value="name" name="name">
-        <input type="text" value="race" name="race">
-        <input type="text" value="species" name="species">
-        <input type="number" value=0.0 name="weight" step="0.01">
-        <select name="gender">
-            <option value="MALE">male</option>
-            <option value="FEMALE">female</option>
-        </select>
-        <input type="date" name="dateOfBirth">
-        <input type="submit"/>
-        <!--  <input type="number" value="weight">
-          <input type="datetime-local" value="dateOfBirth">
-           <button class="btn btn-success" onclick="sendForm('addAnimalForm','http://localhost:8100/animals')">
-        Add
-    </button>
-    -->
+    <form id="form">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input class="form-control" type="text" id="name" value="name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="species">Species</label>
+            <input class="form-control" type="text" id="species" value="species" name="species">
+        </div>
+        <div class="form-group">
+            <label for="race">Race</label>
+            <input class="form-control" type="text" id="race" value="race" name="race">
+        </div>
+        <div class="form-group">
+            <label for="weight">Weight</label>
+            <input class="form-control" type="number" id="weight" value=0.0 name="weight" step="0.01">
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select class="form-control" name="gender" id="gender">
+                <option value="MALE">male</option>
+                <option value="FEMALE">female</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="date">Date of birth</label>
+            <input class="form-control" type="date" id="date" name="dateOfBirth">
+        </div>
+        <button class="btn btn-success" type="submit">Add</button>
     </form>
 
 </div>
