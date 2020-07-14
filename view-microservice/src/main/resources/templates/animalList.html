@@ -10,13 +10,13 @@
         url: 'http://localhost:8100/animals',
         type: "GET",
         success: function (result) {
-            console.log(result);
-            window.alert('Succes in getting all animals list: ');
             jsonToList(result);
         },
         error: function (error) {
             console.log(error);
-            window.alert("Error during loading alll animals");
+            document.getElementById('list').innerHTML  = '<div class="alert alert-danger" role="alert">' +
+                'Error during loading animals list!' +
+                '</div>'
         }
     });
 
@@ -36,8 +36,10 @@
                 jsonList[i].name +
                 '</td>' +
                 '<td>' +
+                jsonList[i].species +
                 '</td>' +
                 '<td>' +
+                jsonList[i].race +
                 '</td>' +
                 '</tr>');
         }
