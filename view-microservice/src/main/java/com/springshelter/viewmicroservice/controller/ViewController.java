@@ -12,4 +12,9 @@ public class ViewController {
     public String addAnimalForm() {
         return "form";
     }
+
+    @GetMapping
+    public String viewAnimals() {
+        return "animalList";
+    }
 }

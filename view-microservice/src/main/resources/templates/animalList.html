@@ -1,0 +1,37 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head">
+<body>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Species</th>
+        <th>Race</th>
+    </tr>
+    </thead>
+    <span id="list">
+
+    </span>
+</table>
+<script>
+    $.ajax({
+        url: 'http://localhost:8100/animals',
+        type: "GET",
+        success: function (result) {
+            console.log(result);
+            window.alert('Succes in getting all animals list: ');
+        },
+        error: function (error) {
+            console.log(error);
+            window.alert("Error during loading alll animals");
+        }
+    });
+
+    function jsonToList(jsonList){
+        for
+    }
+</script>
+
+<footer th:replace="fragments :: footer"></footer>
+</body>
+</html>
