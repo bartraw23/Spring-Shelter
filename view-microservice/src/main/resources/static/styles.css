@@ -226,6 +226,7 @@ th {
 label {
   display: inline-block;
   margin-bottom: 0.5rem;
+  color: aliceblue;
 }
 
 button {
@@ -10175,12 +10176,12 @@ body {
   }
   #mainNav .navbar-brand {
     padding: 0.5rem 0;
-    color: rgba(255, 255, 255, 0.5);
+    color: #e9ecef;
   }
   #mainNav .nav-link {
     transition: none;
     padding: 2rem 1.5rem;
-    color: rgba(255, 255, 255, 0.5);
+    color: #e9ecef;
   }
   #mainNav .nav-link:hover {
     color: rgba(255, 255, 255, 0.75);
@@ -10228,7 +10229,7 @@ body {
   height: auto;
   min-height: 35rem;
   padding: 15rem 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000000 100%), url("img/bg-masthead.jpg");
+  background: linear-gradient(to bottom, rgba(165, 55, 253, 0.3) 0%, rgba(38, 194, 129, 0.7) 75%, #000000 100%), url("img/bg-masthead.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -10272,7 +10273,7 @@ body {
 
 .about-section {
   padding-top: 10rem;
-  background: linear-gradient(to bottom, #000000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
+  background: linear-gradient(to bottom, #000000 0%, rgba(134, 226, 213, 0.5) 75%, rgba(210, 215, 211, 0.8) 100%);
 }
 .about-section p {
   margin-bottom: 5rem;
