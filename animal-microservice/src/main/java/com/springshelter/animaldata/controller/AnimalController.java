@@ -1,7 +1,9 @@
 package com.springshelter.animaldata.controller;
 
 import com.springshelter.animaldata.models.Animal;
+import com.springshelter.animaldata.models.MailAndDate;
 import com.springshelter.animaldata.service.AnimalService;
+import com.springshelter.animaldata.service.VisitationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +16,8 @@ import java.util.UUID;
 public class AnimalController {
 
     private AnimalService animalService;
+
+    private VisitationService visitationService;
 
     @Autowired
     public AnimalController(AnimalService animalService) {
@@ -43,5 +47,10 @@ public class AnimalController {
     @GetMapping
     public List<Animal> getAllAnimals() {
         return animalService.findAll();
+    }
+
+    @PostMapping("/{id}/visit")
+    public Boolean requestVisit(@PathVariable("id") UUID id, @RequestBody MailAndDate mailAndDate) {
+        return visitationService.makeVisitation(id, mailAndDate);
     }
 }

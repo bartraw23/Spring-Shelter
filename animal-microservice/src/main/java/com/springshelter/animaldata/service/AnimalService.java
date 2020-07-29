@@ -15,7 +15,7 @@ import java.util.UUID;
 public class AnimalService {
 
     @Autowired
-    AnimalRepository animalRepository;
+    private AnimalRepository animalRepository;
 
     @Transactional
     public Animal addAnimal(Animal animal) {

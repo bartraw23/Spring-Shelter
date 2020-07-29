@@ -5,6 +5,7 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
@@ -22,6 +23,16 @@ public class Visitation {
     @NotEmpty
     @Column(nullable = false)
     private String visitorMail;
+
+    @NotEmpty
+    @Column(nullable = false)
+    private LocalDate date;
+
+    public Visitation(String visitorMail, Animal animal, LocalDate date) {
+        this.animal = animal;
+        this.visitorMail = visitorMail;
+        this.date = date;
+    }
 
     public UUID getId() {
         return id;
@@ -45,5 +56,13 @@ public class Visitation {
 
     public void setVisitorMail(String visitorMail) {
         this.visitorMail = visitorMail;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 }
