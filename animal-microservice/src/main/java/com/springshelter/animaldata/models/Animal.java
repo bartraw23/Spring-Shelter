@@ -1,28 +1,24 @@
 package com.springshelter.animaldata.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Type;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
 public class Animal {
     @Id
     @GeneratedValue
-    @JsonIgnore
     @Type(type = "org.hibernate.type.UUIDCharType")
     private UUID id;
 
     @NotEmpty
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String name;
 
     @NotBlank
@@ -43,6 +39,17 @@ public class Animal {
 
     @Column
     private LocalDateTime dateOfEnrollment;
+
+    @OneToMany(mappedBy = "animal")
+    private List<Visitation> Visitation;
+
+    public List<Visitation> getVisitations() {
+        return Visitation;
+    }
+
+    public void setVisitations(List<Visitation> visitations) {
+        Visitation = visitations;
+    }
 
     public UUID getId() {
         return id;
