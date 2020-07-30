@@ -5,9 +5,33 @@
 
 </div>
 
-
 <script>
     let i;
+    let data;
+    let x;
+
+    function submitVisitation() {
+        data = $("form").formToJson();
+        $.ajax({
+            url: 'http://localhost:8100/animals/' + x + '/visit',
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            success: function (result) {
+                console.log(result);
+                window.alert('Succes in making visit request');
+                $("visitWindow").close;
+            },
+            error: function (error) {
+                console.log(error);
+                window.alert("Error during making visit request");
+            }
+        })
+        return false;
+    };
+
+
     $.ajax({
         url: 'http://localhost:8100/animals',
         type: "GET",
@@ -22,20 +46,8 @@
         }
     });
 
-    function getVisit(id) {
-        $.ajax({
-            url: 'http://localhost:8100/animals/' + id + '/visit',
-            type: "POST",
-            dataType: "json",
-            contentType: "application/json",
-            data: JSON.stringify(data),
-            success: function (result) {
-                window.alert("zadziałało!")
-            },
-            error: function (error) {
-                window.alert("cos sie popsuło!")
-            }
-        })
+    function persistUUID(y) {
+        x = y;
     }
 
     function jsonToList(jsonList) {
@@ -45,7 +57,7 @@
             '        <th>Name</th>' +
             '        <th>Species</th>' +
             '        <th>Race</th>' +
-            '       <th>Wizyta</th>' +
+            '       <th>Visit</th>' +
             '    </tr>' +
             '    </thead>';
 
@@ -61,16 +73,40 @@
                 jsonList[i].race +
                 '</td>' +
                 '<td>' +
-                '<button class="btn btn-success" onclick="getVisit(' + jsonList[i].id + ')">Wizyta</button>' +
+                '<button class="btn btn-info" data-toggle="modal" data-target="#visitWindow" onclick="persistUUID(&quot;' + jsonList[i].id + '&quot;)">Visit</button>' +
                 '</td>' +
                 '</tr>');
         }
         listHtml = listHtml.concat('</table>');
         document.getElementById('list').innerHTML = listHtml;
     }
-
 </script>
 
+<div id="visitWindow" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form id="form">
+                    <div class="form-group">
+                        <label for="mail">E-mail</label>
+                        <input class="form-control" type="email" id="mail" placeholder="Enter mail" name="mail">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date of birth</label>
+                        <input class="form-control" type="date" id="date" name="date">
+                    </div>
+                </form>
+                <button class="btn btn-success" onclick="submitVisitation()">Submit</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script th:src="@{/formToJson.js}"></script>
 <footer th:replace="fragments :: footer"></footer>
 </body>
 </html>
