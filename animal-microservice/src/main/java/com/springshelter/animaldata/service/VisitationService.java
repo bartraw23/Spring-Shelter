@@ -20,7 +20,7 @@ public class VisitationService {
     private AnimalService animalService;
 
 
-    public Boolean makeVisitation(UUID uuid, MailAndDate mailAndDate) {
+    public boolean makeVisitation(UUID uuid, MailAndDate mailAndDate) {
         Optional<Animal> optionalAnimal = animalService.findById(uuid);
 
         if (optionalAnimal.isEmpty() && !optionalAnimal.isPresent()) {

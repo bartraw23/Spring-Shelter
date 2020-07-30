@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
 import java.util.UUID;
@@ -20,11 +21,11 @@ public class Visitation {
     @JoinColumn(name = "animal_id")
     private Animal animal;
 
+    @Email
     @NotEmpty
     @Column(nullable = false)
     private String visitorMail;
 
-    @NotEmpty
     @Column(nullable = false)
     private LocalDate date;
 

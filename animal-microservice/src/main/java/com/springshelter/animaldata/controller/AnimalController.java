@@ -17,6 +17,7 @@ public class AnimalController {
 
     private AnimalService animalService;
 
+    @Autowired
     private VisitationService visitationService;
 
     @Autowired
@@ -50,7 +51,7 @@ public class AnimalController {
     }
 
     @PostMapping("/{id}/visit")
-    public Boolean requestVisit(@PathVariable("id") UUID id, @RequestBody MailAndDate mailAndDate) {
+    public boolean requestVisit(@PathVariable("id") UUID id, @RequestBody MailAndDate mailAndDate) {
         return visitationService.makeVisitation(id, mailAndDate);
     }
 }
