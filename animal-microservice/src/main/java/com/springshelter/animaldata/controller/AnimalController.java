@@ -1,5 +1,6 @@
 package com.springshelter.animaldata.controller;
 
+import com.springshelter.animaldata.dto.AnimalDto;
 import com.springshelter.animaldata.models.Animal;
 import com.springshelter.animaldata.models.MailAndDate;
 import com.springshelter.animaldata.service.AnimalService;
@@ -46,7 +47,7 @@ public class AnimalController {
     }
 
     @GetMapping
-    public List<Animal> getAllAnimals() {
+    public List<AnimalDto> getAllAnimals() {
         return animalService.findAll();
     }
 

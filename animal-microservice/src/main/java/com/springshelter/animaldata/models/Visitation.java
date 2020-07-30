@@ -35,6 +35,9 @@ public class Visitation {
         this.date = date;
     }
 
+    public Visitation() {
+    }
+
     public UUID getId() {
         return id;
     }

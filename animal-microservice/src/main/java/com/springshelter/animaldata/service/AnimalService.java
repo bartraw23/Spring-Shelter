@@ -1,5 +1,6 @@
 package com.springshelter.animaldata.service;
 
+import com.springshelter.animaldata.dto.AnimalDto;
 import com.springshelter.animaldata.models.Animal;
 import com.springshelter.animaldata.repository.AnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class AnimalService {
@@ -34,8 +36,9 @@ public class AnimalService {
     }
 
     @Transactional
-    public List<Animal> findAll() {
-        return animalRepository.findAll();
+    public List<AnimalDto> findAll() {
+        List<Animal> animalList = animalRepository.findAll();
+        return animalList.stream().map(a -> entityToDto(a)).collect(Collectors.toList());
     }
 
     @Transactional
@@ -45,5 +48,18 @@ public class AnimalService {
             return true;
         }
         return false;
+    }
+
+    private AnimalDto entityToDto(Animal animal) {
+        AnimalDto animalDto = new AnimalDto();
+        animalDto.setId(animal.getId());
+        animalDto.setName(animal.getName());
+        animalDto.setSpecies(animal.getSpecies());
+        animalDto.setRace(animal.getRace());
+        animalDto.setDateOfBirth(animal.getDateOfBirth());
+        animalDto.setDateOfEnrollment(animal.getDateOfEnrollment());
+        animalDto.setGender(animal.getGender().toString());
+        animalDto.setWeight(animal.getWeight());
+        return animalDto;
     }
 }
