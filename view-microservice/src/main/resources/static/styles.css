@@ -10373,3 +10373,7 @@ body {
 .popup-content {
   visibility:hidden;
 }
+
+.animals-list-section p {
+  margin-bottom: 5rem;
+}
