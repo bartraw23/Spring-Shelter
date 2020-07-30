@@ -10365,3 +10365,11 @@ body {
 .footer {
   padding: 5rem 0;
 }
+
+.popup-overlay {
+  visibility:hidden;
+}
+
+.popup-content {
+  visibility:hidden;
+}

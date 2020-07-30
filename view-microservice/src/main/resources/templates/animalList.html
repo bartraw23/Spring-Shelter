@@ -5,7 +5,9 @@
 
 </div>
 
+
 <script>
+    let i;
     $.ajax({
         url: 'http://localhost:8100/animals',
         type: "GET",
@@ -14,11 +16,27 @@
         },
         error: function (error) {
             console.log(error);
-            document.getElementById('list').innerHTML  = '<div class="alert alert-danger" role="alert">' +
+            document.getElementById('list').innerHTML = '<div class="alert alert-danger" role="alert">' +
                 'Error during loading animals list!' +
                 '</div>'
         }
     });
+
+    function getVisit(id) {
+        $.ajax({
+            url: 'http://localhost:8100/animals/' + id + '/visit',
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            data: JSON.stringify(data),
+            success: function (result) {
+                window.alert("zadziałało!")
+            },
+            error: function (error) {
+                window.alert("cos sie popsuło!")
+            }
+        })
+    }
 
     function jsonToList(jsonList) {
         let listHtml = '<table class="table table-striped">' +
@@ -27,9 +45,10 @@
             '        <th>Name</th>' +
             '        <th>Species</th>' +
             '        <th>Race</th>' +
+            '       <th>Wizyta</th>' +
             '    </tr>' +
             '    </thead>';
-        var i;
+
         for (i = 0; i < jsonList.length; i++) {
             listHtml = listHtml.concat('<tr>' +
                 '<td>' +
@@ -41,11 +60,15 @@
                 '<td>' +
                 jsonList[i].race +
                 '</td>' +
+                '<td>' +
+                '<button class="btn btn-success" onclick="getVisit(' + jsonList[i].id + ')">Wizyta</button>' +
+                '</td>' +
                 '</tr>');
         }
         listHtml = listHtml.concat('</table>');
-        document.getElementById('list').innerHTML =listHtml;
+        document.getElementById('list').innerHTML = listHtml;
     }
+
 </script>
 
 <footer th:replace="fragments :: footer"></footer>
