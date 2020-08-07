@@ -1,13 +1,6 @@
 version: '3'
 
 services:
-   springsecurity:
-      image: mysql:8.0.17
-      environment:
-         MYSQL_ROOT_PASSWORD: root
-         MYSQL_DATABASE: springsecurity
-      ports:
-         - "3310:3306"
    animalShelter:
       image: mysql
       environment:
